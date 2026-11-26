@@ -1,6 +1,4 @@
-HOME HUB v0.2.0 — aggiornamento dalla v0.1.0
-1. Eseguire upgrade_v0.2.0.sql nel SQL Editor Supabase. Non rieseguire schema.sql (schema iniziale).
-2. Copiare i file applicativi nella cartella del repository, sovrascrivendo i precedenti. Commit e push.
-3. Chiudere e riaprire l'app online; verificare v0.2.0. Se necessario ricaricare nuovamente.
-Dashboard, lista spesa e lavagna condivise. Tutti i membri possono aggiungere, completare ed eliminare elementi. Sincronizzazione manuale e all'apertura; offline sola lettura dei moduli già consultati. Nessuna modifica ai dati delle famiglie esistenti.
-Per installazione nuova: schema.sql seguito da upgrade_v0.2.0.sql.
+HOME HUB 0.3.0
+Aggiornamento: eseguire upgrade_v0.3.0.sql su Supabase dopo v0.2.0; sostituire i file web e provare in locale prima del push. Nuova installazione: schema.sql, upgrade_v0.2.0.sql, upgrade_v0.3.0.sql in ordine.
+Storico: gli elementi acquistati restano nello storico fino a eliminazione esplicita; ripristinabili. Dati precedenti conservati, autore e data completamento precedenti non ricostruibili. Aggiornamento automatico ogni 15 secondi nei moduli aperti, sospeso durante digitazione. Offline sola lettura. Tutti i membri mantengono i permessi precedenti.
+Verificare login, famiglia, inserimento, storico, ripristino, lavagna, scadenza, sincronizzazione tra utenti e aggiornamento PWA. Non pubblicare ZIP o inviti nel repository.
