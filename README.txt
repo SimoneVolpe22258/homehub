@@ -1,1 +1,2 @@
-HOME HUB 0.4.2 - aggiornare prima Supabase con upgrade_v0.4.2.sql. Catalogo permanente, nomi profilo, accesso catalogo dalla spesa. Offline sola lettura.
+HOME HUB 0.4.3 – Family & Challenge
+Eseguire upgrade_v0.4.3.sql dopo le migrazioni precedenti. Genitore = admin; gli adulti precedentemente autorizzati al concorso devono ricevere un invito Genitore per mantenere i privilegi. Inviti legati a email verificata, validi 48 ore. Proposte premio accolte non costituiscono un premio assegnato. Iniziative accolte passano alla verifica finale. Offline sola lettura. Test di integrazione Supabase da eseguire.
