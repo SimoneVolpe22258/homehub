@@ -1,7 +1,6 @@
-HOME HUB v0.1.0 — 25/11/2026
-1. Nel progetto Supabase dedicato, eseguire schema.sql nel SQL Editor una sola volta.
-2. Pubblicare index.html, app.js, style.css, manifest.json, sw.js, icon.svg nella radice GitHub Pages (HTTPS).
-3. Aprire il sito e inserire Project URL e chiave publishable. Registrarsi e confermare email; accedere e creare famiglia. Per invitare: generare codice, comunicarlo alla persona che deve registrarsi con l'email indicata e inserire il codice.
-Configurare Site URL e redirect consentiti in Supabase Auth per il sito pubblicato.
-Changelog: autenticazione, più famiglie per account, inviti, revoca, cache IndexedDB e PWA.
-Limiti: gestione famiglia richiede connessione; offline sola consultazione cache. Nessuna coda di modifiche offline o risoluzione conflitti in questa versione. Cache locale può conservare dati dopo revoca fino a riconnessione; usare dispositivi personali. Moduli operativi non inclusi. SQL e integrazione Supabase non testati dal vivo. Verificare isolamento fra due account e famiglie prima dell'uso reale. Non pubblicare dati personali o chiavi amministrative.
+HOME HUB v0.2.0 — aggiornamento dalla v0.1.0
+1. Eseguire upgrade_v0.2.0.sql nel SQL Editor Supabase. Non rieseguire schema.sql (schema iniziale).
+2. Copiare i file applicativi nella cartella del repository, sovrascrivendo i precedenti. Commit e push.
+3. Chiudere e riaprire l'app online; verificare v0.2.0. Se necessario ricaricare nuovamente.
+Dashboard, lista spesa e lavagna condivise. Tutti i membri possono aggiungere, completare ed eliminare elementi. Sincronizzazione manuale e all'apertura; offline sola lettura dei moduli già consultati. Nessuna modifica ai dati delle famiglie esistenti.
+Per installazione nuova: schema.sql seguito da upgrade_v0.2.0.sql.

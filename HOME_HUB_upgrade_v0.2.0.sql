@@ -1,0 +1,10 @@
+begin;
+create table if not exists public.hh_entries(id uuid primary key default gen_random_uuid(), fid uuid not null references public.hh_families on delete cascade, kind text not null check(kind in ('shopping','board')), content text not null check(length(trim(content)) between 1 and 500), done boolean not null default false, created_at timestamptz not null default now());
+alter table public.hh_entries enable row level security;
+revoke all on public.hh_entries from public,anon,authenticated;
+create or replace function public.hh_entries_list(f uuid,k text) returns setof public.hh_entries language sql security definer set search_path='' as $$ select e.* from public.hh_entries e where e.fid=f and e.kind=k and exists(select 1 from public.hh_memberships m where m.fid=f and m.uid=auth.uid()) order by e.done,e.created_at desc $$;
+create or replace function public.hh_entry_add(f uuid,k text,c text) returns void language plpgsql security definer set search_path='' as $$ begin if not exists(select 1 from public.hh_memberships m where m.fid=f and m.uid=auth.uid()) then raise exception 'Non autorizzato'; end if; insert into public.hh_entries(fid,kind,content) values(f,k,trim(c)); end $$;
+create or replace function public.hh_entry_change(f uuid,i uuid,action text) returns void language plpgsql security definer set search_path='' as $$ begin if not exists(select 1 from public.hh_memberships m where m.fid=f and m.uid=auth.uid()) then raise exception 'Non autorizzato'; end if; if action='toggle' then update public.hh_entries set done=not done where fid=f and id=i; elsif action='delete' then delete from public.hh_entries where fid=f and id=i; else raise exception 'Azione non valida'; end if; end $$;
+revoke execute on function public.hh_entries_list(uuid,text),public.hh_entry_add(uuid,text,text),public.hh_entry_change(uuid,uuid,text) from public,anon;
+grant execute on function public.hh_entries_list(uuid,text),public.hh_entry_add(uuid,text,text),public.hh_entry_change(uuid,uuid,text) to authenticated;
+commit;
