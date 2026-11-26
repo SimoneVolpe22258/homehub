@@ -4,3 +4,5 @@ Eseguire upgrade_v0.4.3.sql dopo le migrazioni precedenti. Genitore = admin; gli
 v0.5.0 Family Station: eseguire upgrade_v0.5.0.sql dopo v0.4.3. Pubblicare anche station.html e station.js. Da account admin, Famiglia > Family Station > Associa tablet. Aprire il link generato esclusivamente sul tablet (non condividere pubblicamente). Il link è una credenziale revocabile. Selezionare un profilo; blocco dopo 180 secondi. Il tablet richiede connessione e non consente operazioni amministrative. Non usare un account personale sul tablet. Per dissociare, revocare da account admin e cancellare dati sito sul tablet. La selezione senza password non prova l'identità della persona. Test live Supabase non eseguiti.
 
 0.5.1: eseguire upgrade_v0.5.1.sql dopo 0.5.0. Missioni libere con presa in carico atomica e rinuncia. Scadenza missione usata anche per presa in carico. Ricorrenze non implementate.
+
+0.5.2: eseguire upgrade_v0.5.2.sql. Solo admin possono eliminare attività domestiche e annullare missioni. Le missioni annullate restano nello storico, escluse dai punti; premi già consegnati non vengono recuperati automaticamente. Test live necessari.
