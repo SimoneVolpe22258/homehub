@@ -1,0 +1,5 @@
+Versione 0.6.0 - unificazione interfaccia (prima fase).
+Nessuna migrazione SQL: conserva le tabelle e gli ID esistenti, incluse foto e punti.
+Nuove attività attraverso hh_challenge_add, punti predefiniti 0; le attività precedenti restano gestibili nella stessa pagina. Challenge mostra classifica, premi, variazioni e proposte premio. Storico separato.
+Aggiornamento manuale tramite Sincronizza ora; nessun ridisegno periodico.
+Non implementati: migrazione fisica tabelle, ricorrenze, adeguamento funzionale Family Station, attivazione pulizia foto. Test live necessari.

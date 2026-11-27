@@ -6,3 +6,4 @@ li,small,article{overflow-wrap:anywhere}article{padding:12px 0;border-bottom:1px
 
 /* Mobile: keep labels full width and wrap action buttons. */
 .entry{flex-wrap:wrap}.entry>span{min-width:0;flex:1 1 220px}.entry>button{flex:0 0 auto} @media(max-width:600px){.entry>span{flex:0 0 100%;width:100%;overflow-wrap:break-word}.entry{align-items:flex-start;gap:6px}.entry>button{max-width:100%;padding:10px;font-size:14px}.challengeCard{min-width:0}.challengeCard button{white-space:normal;overflow-wrap:break-word} }
+[hidden]{display:none!important}
